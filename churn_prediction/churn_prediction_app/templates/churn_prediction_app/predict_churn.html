@@ -1,0 +1,38 @@
+<!-- churn_prediction_app/templates/churn_prediction_app/predict_churn.html -->
+{% extends 'churn_prediction_app/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Customer Churn Prediction</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                
+                {% if field.widget.input_type == 'radio' or field.widget.input_type == 'checkbox' %}
+                    <div>
+                        {% for subwidget in field.subwidgets %}
+                            <div class="form-check">
+                                {{ subwidget.tag }}
+                                <label class="form-check-label" for="{{ subwidget.id_for_label }}">
+                                    {{ subwidget.choice_label }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ field }}
+                {% endif %}
+                
+                {% if field.errors %}
+                    <div class="error">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn-submit">Predict</button>
+    </form>
+</div>
+{% endblock %}

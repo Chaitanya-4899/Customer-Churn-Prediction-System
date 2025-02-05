@@ -1,0 +1,20 @@
+{% extends "churn_prediction_app/base.html" %}
+
+{% block title %}
+    Prediction Result
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 50px;">
+    <h1>Prediction Result</h1>
+    <p style="font-size: 24px;">Model predicted that Customer is likely to:</p>
+    {% if prediction == 'Churn' %}
+    <p style="font-size: 28px; color: red;">{{ prediction }}</p>
+    {% else %}
+    <p style="font-size: 28px; color: green;">{{ prediction }}</p>
+    {% endif %}
+    <p style="font-size: 20px;">Probability of Customer Churning: <strong>{{ probability }}</strong></p>
+    <br>
+    <a href="{% url 'predict_churn' %}" class="btn btn-primary mt-4" style="color: ghostwhite;">Back to Prediction Form</a>
+</div>
+{% endblock %}
