@@ -1,15 +1,16 @@
 # Customer Churn Prediction System
+## 📌 Overview
 This project is an interactive Churn Prediction System platform, developed using Python, Django framework and Machine Learning algorithms(Logistic Regression, XGBoost). This app enables businesses in driving strategic retention strategies and improving customer experience.
 
 ---
-## Project Highlights:
+## 🛠️ Project Highlights:
 - Utilized Machine Learning models (Logistic Regression and XGBoost) to predict customer churn with high accuracy.
 - Designed a fully interactive web application using Django, enabling seamless data input and real-time predictions.
 - Engineered features like customer satisfaction scores, contract types, and internet service preferences to identify key churn drivers.
 - Employed ensemble modeling to enhance prediction reliability, averaging probabilities from both models for optimal results.
 
 ---
-## Getting Started
+## 🚀 Getting Started
 
 #### Prerequisites
 Setup:
@@ -53,7 +54,7 @@ Setup:
    - Go to link provided in terminal to access the web app.
 
 ---
-## Notes
+## 📒 Notes
 
 - No additional software is required: The project is configured such that all necessary libraries are bundled within the project directories, so there's no need to install them separately or modify environment variables.
 - Running the Application: Ensure the virtual environment is activated each time before running the application.
